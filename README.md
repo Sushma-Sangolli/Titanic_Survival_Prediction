@@ -1,82 +1,137 @@
-# Titanic Survival Prediction - README
+Titanic Survival Prediction - README
 
-## 📌 Project Overview
+📌 Project Overview
+
 This project predicts Titanic passenger survival using machine learning models. The dataset contains features like passenger class, gender, age, and fare. The models analyze these features to classify passengers as either "Survived" or "Not Survived."
 
-## 🔍 Project Workflow
-1. **Data Preprocessing**
-   - Loaded Titanic dataset
-   - Handled missing values
-   - Encoded categorical variables
-   - Split data into training and test sets
+🔍 Project Workflow
 
-2. **Feature Engineering**
-   - Transformed categorical features (Gender, Passenger Class)
-   - Scaled numerical features (Fare, Age)
+Data Preprocessing
 
-3. **Model Training**
-   - Trained three models:
-     - Random Forest
-     - XGBoost
-     - Decision Tree
-   - Saved models using `joblib`
+Loaded Titanic dataset
 
-4. **Evaluation**
-   - Tested models on unseen data
-   - Generated classification reports for accuracy, precision, recall, and F1-score
+Handled missing values
 
-## 🚀 How to Run the Project
-### 1️⃣ Generate Encoders (if needed)
-```bash
-python generate_encoders.py
-```
+Encoded categorical variables
 
-### 2️⃣ Train & Save Models
-```bash
-python train_models.py
-```
+Split data into training and test sets
 
-### 3️⃣ Evaluate Model Performance
-```bash
+Feature Engineering
+
+Transformed categorical features (Gender, Passenger Class)
+
+Scaled numerical features (Fare, Age)
+
+Model Training
+
+Trained three models:
+
+Random Forest
+
+XGBoost
+
+Decision Tree
+
+Saved models using joblib
+
+Evaluation
+
+Tested models on unseen data
+
+Generated classification reports for accuracy, precision, recall, and F1-score
+
+Plotted Confusion Matrix and ROC Curve
+
+🚀 How to Run the Project
+
+1️⃣ Train & Save Models
+
+python model.py
+
+2️⃣ Evaluate Model Performance
+
 python evaluate_models.py
-```
 
-## 📊 Model Evaluation Results
-Each model achieved **100% accuracy** on the test set. While this may indicate strong predictive power, it also suggests possible overfitting. Cross-validation and additional testing are recommended.
+📊 Model Evaluation Results
 
-### 🔹 Classification Reports
-#### Random Forest / XGBoost / Decision Tree
-| Metric        | Class 0 (Not Survived) | Class 1 (Survived) |
-|--------------|----------------------|-------------------|
-| Precision    | 1.00                 | 1.00              |
-| Recall       | 1.00                 | 1.00              |
-| F1-score     | 1.00                 | 1.00              |
-| Accuracy     | 1.00                 | -                 |
+Each model was tested on the dataset and evaluated using classification metrics like accuracy, precision, recall, F1-score, confusion matrix, and ROC curve.
 
-## 🎯 Model Insights
-- **Females are more likely to survive**, aligning with the historical "women and children first" policy.
-- **Males have a lower survival rate, even in first class.**
-- **Age and Fare do not significantly affect male survival chances.**
+🔹 Classification Reports
 
-### 🧐 When Do Males Survive?
-- **Pclass = 1 (First Class)** → Males in first class had a better survival rate.
-- **Age < 15 years** → Younger boys had higher survival chances.
-- **Fare Paid** → Higher fare-paying passengers had better access to lifeboats.
+Random Forest / XGBoost / Decision Tree
 
-### 🔎 Test Example (Possible Male Survivor)
-Try running the model with these inputs:
-```plaintext
-Enter Passenger Age: 10  
+Metric
+
+Class 0 (Not Survived)
+
+Class 1 (Survived)
+
+Precision
+
+1.00
+
+1.00
+
+Recall
+
+1.00
+
+1.00
+
+F1-score
+
+1.00
+
+1.00
+
+Accuracy
+
+1.00
+
+-
+
+🌟 Model Insights
+
+Females are more likely to survive, aligning with the historical "women and children first" policy.
+
+Males have a lower survival rate, even in first class.
+
+Age and Fare do not significantly affect male survival chances.
+
+👮 When Do Males Survive?
+
+Pclass = 1 (First Class) → Males in first class had a better survival rate.
+
+Age < 15 years → Younger boys had higher survival chances.
+
+Fare Paid → Higher fare-paying passengers had better access to lifeboats.
+
+🔎 Example Test Cases
+
+🔹 Test Case 1: Survived (Female, First Class)
+
+Enter Passenger Age: 25  
 Enter Passenger Class (1,2,3): 1  
+Enter Gender (male/female): female  
+Enter Fare Amount (or press Enter to use average): 100  
+
+Prediction: Survived ✅
+
+🔹 Test Case 2: Not Survived (Male, Third Class)
+
+Enter Passenger Age: 30  
+Enter Passenger Class (1,2,3): 3  
 Enter Gender (male/female): male  
-Enter Fare Amount (or press Enter to use average): 50  
-```
-Prediction: **Survived** ✅
+Enter Fare Amount (or press Enter to use average): 10  
 
-## 🛠️ Future Improvements
-- Add more diverse datasets to test generalization
-- Use cross-validation to verify model robustness
-- Improve feature engineering to avoid overfitting
+Prediction: Not Survived ❌
 
-✅ **Project Completed Successfully!** 🎉
+🛠️ Future Improvements
 
+Add more diverse datasets to test generalization
+
+Use cross-validation to verify model robustness
+
+Improve feature engineering to avoid overfitting
+
+💪 Project Completed Successfully! 🎉
