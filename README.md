@@ -35,7 +35,7 @@ python model.py
 
 ### 2️⃣ Evaluate Model Performance
 ```bash
-python evaluate_models.py
+python Evaluate-Models.py
 ```
 
 ## 📊 Model Evaluation Results
